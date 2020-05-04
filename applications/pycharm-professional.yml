@@ -1,0 +1,7 @@
+---
+- name: Pycharm Professional (snap) - install
+  become: yes
+  snap:
+    name: pycharm-professional
+    classic: yes
+    state: present

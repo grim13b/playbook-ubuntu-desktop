@@ -1,0 +1,30 @@
+---
+- name:  Source Han Code JP(git) - check if the 'SourceHanCodeJP' already exists
+  shell: fc-list | grep SourceHanCodeJP
+  register: is_exists
+  check_mode: no
+  changed_when: no
+
+- block:
+  - name: Source Han Code JP(git) - create installation directory
+    file:
+      path:  ~/.local/share/fonts
+      state: directory
+
+  - name: Source Han Code JP(git) - get github repository information
+    uri:
+      url: https://api.github.com/repos/adobe-fonts/source-han-code-jp/releases/latest
+      return_content: yes
+      body_format: json
+    register: response
+
+  - name: Source Han Code JP(git) - unarchive
+    unarchive: 
+      remote_src: true
+      src: '{{ response.json.zipball_url }}'
+      dest: ~/.local/share/fonts
+
+  - name: Source Han Code JP(git) - install
+    shell: fc-cache -f -v
+
+  when: is_exists.rc == 1

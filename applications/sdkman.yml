@@ -1,0 +1,14 @@
+---
+- name: SDKMAN! (sdkman) - fetch 
+  uri:
+    url: https://get.sdkman.io
+    return_content: yes
+  register: get_sdkman_io
+
+- name: SDKMAN! (sdkman) - install
+  shell: "{{ get_sdkman_io.content }}"
+
+- name: SDKMAN! (sdkman) - add sdkman to .bashrc
+  lineinfile:
+    path: ~/.bashrc
+    line: . ~/.sdkman/bin/sdkman-init.sh

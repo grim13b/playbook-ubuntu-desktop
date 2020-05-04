@@ -1,0 +1,6 @@
+---
+- name: tig (apt) - install
+  become: yes
+  apt:
+    name: tig
+    state: latest

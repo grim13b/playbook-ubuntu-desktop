@@ -1,0 +1,7 @@
+---
+- name: IntelliJ Idea Ultimate (snap) - install
+  become: yes
+  snap:
+    name: intellij-idea-ultimate
+    classic: yes
+    state: present

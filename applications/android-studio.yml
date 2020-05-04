@@ -1,0 +1,7 @@
+---
+- name: Android Studio (snap) - install
+  become: yes
+  snap:
+    name: android-studio
+    classic: yes
+    state: present

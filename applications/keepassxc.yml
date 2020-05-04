@@ -1,0 +1,7 @@
+---
+- name: keepassxc (snap) - install
+  become: yes
+  snap:
+    name: keepassxc
+    classic: yes
+    state: present

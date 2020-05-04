@@ -1,0 +1,29 @@
+---
+- name: AWS cli v2 (aws) - check if the AWS CLI already exists
+  shell: which aws
+  register: is_exists
+  check_mode: no
+  changed_when: no
+  failed_when: no
+
+- block:
+  - name: AWS cli v2 (aws) - create working directory
+    file:
+      path: /tmp/awscliv2
+      state: directory
+
+  - name: AWS cli v2 (aws) - unarchive
+    unarchive: 
+      remote_src: true
+      src: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+      dest: /tmp/awscliv2
+
+  - name: AWS cli v2 (aws) - install
+    become: yes
+    shell: /tmp/awscliv2/aws/install
+
+  - name: AWS cli v2 (aws) - add completion to .bashrc
+    lineinfile:
+      path: ~/.bashrc
+      line: complete -C aws_completer aws
+  when: is_exists.rc == 1

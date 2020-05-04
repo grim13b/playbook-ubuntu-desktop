@@ -1,0 +1,7 @@
+---
+- name: WebStorm (snap) - install
+  become: yes
+  snap:
+    name: webstorm
+    classic: yes
+    state: present

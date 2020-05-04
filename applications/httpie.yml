@@ -1,0 +1,6 @@
+---
+- name: httpie (snap) - install
+  become: yes
+  snap:
+    name: http
+    channel: latest/candidate

@@ -1,0 +1,26 @@
+---
+- name: GoogleChrome (apt) - check if the Google apt already exists
+  command: test -f /etc/apt/sources.list.d/google-chrome.list
+  register: is_exists
+  ignore_errors: True
+
+- block:
+  - name: GoogleChrome (apt) - add key
+    become: yes
+    shell: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+
+  - name: GoogleChrome (apt) - add GoogleChrome repo
+    become: yes
+    copy: content="deb http://dl.google.com/linux/chrome/deb/ stable main" dest=/etc/apt/sources.list.d/google-chrome.list owner=root group=root mode=644
+
+  - name: GoogleChrome (apt) - update cache
+    become: yes
+    apt: update_cache=yes
+
+  when: is_exists.rc == 1
+
+- name: GoogleChrome (apt) - install
+  become: yes
+  apt:
+    name: google-chrome-stable
+    state: latest

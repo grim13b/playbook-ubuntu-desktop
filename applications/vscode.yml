@@ -1,0 +1,19 @@
+---
+- name: VS Code (apt) - add key 
+  become: yes
+  apt_key:
+    url: 'https://packages.microsoft.com/keys/microsoft.asc'
+    state: present
+
+- name: VS Code (apt) - add repo 
+  become: yes
+  apt_repository:
+    repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main'
+    filename: vscode
+    state: present
+
+- name: VS Code (apt) - install
+  become: yes
+  apt:
+    name: code
+    state: latest

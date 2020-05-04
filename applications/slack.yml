@@ -1,0 +1,7 @@
+---
+- name: Slack (snap) - install
+  become: yes
+  snap:
+    name: slack
+    classic: yes
+    state: present
