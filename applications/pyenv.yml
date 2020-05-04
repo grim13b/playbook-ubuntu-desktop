@@ -4,7 +4,7 @@
   register: is_exists
   check_mode: no
   changed_when: no
-  failed_when: is_exists.rc == 0
+  failed_when: is_exists.rc != 1 and is_exists.rc != 0
 
 - block:
   - name: pyenv (pyenv) - install dependency

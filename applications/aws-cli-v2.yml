@@ -4,7 +4,7 @@
   register: is_exists
   check_mode: no
   changed_when: no
-  failed_when: no
+  failed_when: is_exists.rc != 1 and is_exists.rc != 0
 
 - block:
   - name: AWS cli v2 (aws) - create working directory
@@ -26,4 +26,5 @@
     lineinfile:
       path: ~/.bashrc
       line: complete -C aws_completer aws
+
   when: is_exists.rc == 1

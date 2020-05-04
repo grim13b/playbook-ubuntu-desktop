@@ -6,7 +6,7 @@
   register: get_sdkman_io
 
 - name: SDKMAN! (sdkman) - install
-  shell: "{{ get_sdkman_io.content }}"
+  shell: '{{ get_sdkman_io.content }}'
 
 - name: SDKMAN! (sdkman) - add sdkman to .bashrc
   lineinfile:

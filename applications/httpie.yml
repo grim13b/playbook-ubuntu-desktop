@@ -1,6 +1,5 @@
 ---
-- name: httpie (snap) - install
+- name: httpie (apt) - install
   become: yes
   snap:
-    name: http
-    channel: latest/candidate
+    name: httpie
