@@ -5,6 +5,9 @@
     - name: Include valiables
       include_vars:
         file: valiables.yml
+# Env
+    - { name: local-bin, include: environments/local-bin.yml }
+    - { name: peco-history, include: environments/peco-history.yml }
 
 # IDE
 #    - { name: VisualStudio Code, include: applications/vscode.yml }
@@ -17,9 +20,12 @@
 #    - { name: AWS cli v2, include: applications/aws-cli-v2.yml }
 #    - { name: sdkman, include: applications/sdkman.yml }
 #    - { name: tig, include: applications/tig.yml }
-#    - { name: pyenv, include: applications/pyenv.yml }
 #    - { name: httpie, include: applications/httpie.yml }
 #    - { name: source-han-code-jp, include: applications/source-han-code-jp.yml }
+    - { name: direnv, include: applications/direnv.yml }
+
+# Deplicated
+#    - { name: pyenv, include: applications/pyenv.yml }
 
 # Application
 #    - { name: htop, include: applications/htop.yml }
