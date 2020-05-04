@@ -1,0 +1,31 @@
+---
+- name: Setup environment for desktop
+  hosts: localhost
+  tasks:
+    - name: Include valiables
+      include_vars:
+        file: valiables.yml
+
+# IDE
+#    - { name: VisualStudio Code, include: applications/vscode.yml }
+#    - { name: Intelli-J Idea Ultimate, include: applications/intellij-idea.yml }
+#    - { name: Android Studio, include: applications/android-studio.yml }
+#    - { name: PyCharm Professional, include: applications/pycharm-professional.yml }
+#    - { name: WebStorm, include: applications/webstorm.yml }
+
+# Develop environment
+#    - { name: AWS cli v2, include: applications/aws-cli-v2.yml }
+#    - { name: sdkman, include: applications/sdkman.yml }
+#    - { name: tig, include: applications/tig.yml }
+#    - { name: pyenv, include: applications/pyenv.yml }
+#    - { name: httpie, include: applications/httpie.yml }
+#    - { name: source-han-code-jp, include: applications/source-han-code-jp.yml }
+
+# Application
+#    - { name: htop, include: applications/htop.yml }
+#    - { name: Google Chrome, include: applications/chrome.yml }
+#    - { name: keepassxc, include: applications/keepassxc.yml }
+#    - { name: Dropbox, include: applications/dropbox.yml } # TODO: 難しいので後回し
+#    - { name: slack, include: applications/slack.yml }
+
+# Configuration
