@@ -1,0 +1,26 @@
+---
+- name: direnv (direnv) - check if the direnv already exists
+  shell: which direnv
+  register: is_exists
+  check_mode: no
+  changed_when: no
+  failed_when: is_exists.rc != 1 and is_exists.rc != 0
+
+- block:
+  - name: direnv (direnv) - fetch
+    uri: 
+      url: https://direnv.net/install.sh
+      return_content: yes
+    register: install_sh
+  
+  - name: direnv (direnv) - install
+    shell: '{{ install_sh.content }}'
+    args:
+      executable: /bin/bash
+  
+  - name: direnv (direnv) - setup
+    lineinfile:
+      path: ~/.bashrc
+      line: eval "$(direnv hook bash)"
+
+  when: is_exists.rc == 1
