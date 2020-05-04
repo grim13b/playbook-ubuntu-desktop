@@ -1,0 +1,21 @@
+---
+- name: peco - install
+  become: yes
+  apt:
+    name: peco
+    state: latest
+
+- name: peco (apt) - setup
+  blockinfile:
+    path: ~/.bashrc
+    marker: "# {mark} ANSIBLE MANAGED BLOCK peco_history"
+    block: |
+      ## peco_history
+      HISTCONTROL=ignoreboth
+      HISTSIZE=5000
+      peco_history() {
+        declare l=$(HISTTIMEFORMAT= history | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$READLINE_LINE")
+        READLINE_LINE="$l"
+        {{ 'READLINE_POINT=${#l}' }}
+      }
+      bind -x '"\C-r": peco_history'

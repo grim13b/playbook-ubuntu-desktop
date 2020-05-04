@@ -1,0 +1,23 @@
+---
+- name: .local/bin - check if the .local/bin already exists
+  stat: 
+    path: ~/.local/bin/
+  register: localbin
+
+- block:
+  - name: .local/bin - create local bin directory
+    file:
+      path: ~/.local/bin
+      state: directory
+
+  - name: .local/bin - setup
+    blockinfile:
+      path: ~/.bashrc
+      marker: "# {mark} ANSIBLE MANAGED BLOCK .local/bin"
+      block: |
+        ## .local/bin
+        if [ -d "$HOME/.local/bin" ] ; then
+            PATH="$HOME/.local/bin:$PATH"
+        fi
+
+  when: not localbin.stat.exists
