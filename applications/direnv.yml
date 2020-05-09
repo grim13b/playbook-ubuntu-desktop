@@ -14,7 +14,7 @@
     register: install_sh
   
   - name: direnv (direnv) - install
-    shell: . /home/username/.bashrc && '{{ install_sh.content }}'
+    shell: . ~/.bashrc && '{{ install_sh.content }}'
     args:
       executable: /bin/bash
   
