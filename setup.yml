@@ -5,31 +5,35 @@
     - name: Include valiables
       include_vars:
         file: valiables.yml
-# Env
-    - { name: local-bin, include: environments/local-bin.yml }
-    - { name: peco-history, include: environments/peco-history.yml }
+# # Env
+#     - { name: local-bin, include: environments/local-bin.yml }
+#     - { name: peco-history, include: environments/peco-history.yml }
+#     - { name: homebrew, include: applications/homebrew.yml }
 
-# IDE
-    - { name: VisualStudio Code, include: applications/vscode.yml }
-    - { name: Intelli-J Idea Ultimate, include: applications/intellij-idea.yml }
-    - { name: Android Studio, include: applications/android-studio.yml }
-    - { name: PyCharm Professional, include: applications/pycharm-professional.yml }
-    - { name: WebStorm, include: applications/webstorm.yml }
+# # IDE
+#    - { name: VisualStudio Code, include: applications/vscode.yml }
+#    - { name: Intelli-J Idea Ultimate, include: applications/intellij-idea.yml }
+#    - { name: Android Studio, include: applications/android-studio.yml }
+#    - { name: PyCharm Professional, include: applications/pycharm-professional.yml }
+#    - { name: WebStorm, include: applications/webstorm.yml }
 
-# Develop environment
-    - { name: AWS cli v2, include: applications/aws-cli-v2.yml }
-    - { name: sdkman, include: applications/sdkman.yml }
-    - { name: tig, include: applications/tig.yml }
-    - { name: httpie, include: applications/httpie.yml }
-    - { name: source-han-code-jp, include: applications/source-han-code-jp.yml }
-    - { name: direnv, include: applications/direnv.yml }
+# # Develop environment
+#     - { name: AWS cli v2, include: applications/aws-cli-v2.yml }
+#     - { name: sdkman, include: applications/sdkman.yml }
+#     - { name: tig, include: applications/tig.yml }
+#     - { name: httpie, include: applications/httpie.yml }
+#     - { name: source-han-code-jp, include: applications/source-han-code-jp.yml }
+#     - { name: direnv, include: applications/direnv.yml }
+#     - { name: pyenv, include: applications/pyenv.yml }
+#     - { name: aws-vault, include: applications/aws-vault.yml }
+#     - { name: pyenv, include: applications/pyenv.yml }
 
-# Application
-    - { name: htop, include: applications/htop.yml }
-    - { name: Google Chrome, include: applications/chrome.yml }
-    - { name: keepassxc, include: applications/keepassxc.yml }
-#    - { name: Dropbox, include: applications/dropbox.yml } # TODO: 難しいので後回し
-    - { name: slack, include: applications/slack.yml }
-    - { name: spotify, include: applications/spotify.yml }
+# # Application
+#     - { name: htop, include: applications/htop.yml }
+#     - { name: Google Chrome, include: applications/chrome.yml }
+#     - { name: keepassxc, include: applications/keepassxc.yml }
+# #    - { name: Dropbox, include: applications/dropbox.yml } # TODO: 難しいので後回し
+#     - { name: slack, include: applications/slack.yml }
+#     - { name: spotify, include: applications/spotify.yml }
 
 # Configuration
