@@ -30,5 +30,6 @@
     - { name: keepassxc, include: applications/keepassxc.yml }
 #    - { name: Dropbox, include: applications/dropbox.yml } # TODO: 難しいので後回し
     - { name: slack, include: applications/slack.yml }
+    - { name: spotify, include: applications/spotify.yml }
 
 # Configuration
