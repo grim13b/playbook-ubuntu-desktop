@@ -1,0 +1,26 @@
+---
+- name: HomeBrew (HomeBrew) - check if the HomeBrew already exists
+  shell: which brew
+  register: is_exists
+  check_mode: no
+  changed_when: no
+  failed_when: is_exists.rc != 1 and is_exists.rc != 0
+
+- block:
+  - name: HomeBrew (HomeBrew) - fetch
+    uri: 
+      url: https://raw.githubusercontent.com/Homebrew/install/master/install.sh
+      return_content: yes
+    register: install_sh
+  
+  - name: HomeBrew (HomeBrew) - install
+    shell: '{{ install_sh.content }}' 
+    args:
+      executable: /bin/bash
+  
+  - name: HomeBrew (HomeBrew) - setup
+    lineinfile:
+      path: ~/.profile
+      line: eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+  when: is_exists.rc == 1
