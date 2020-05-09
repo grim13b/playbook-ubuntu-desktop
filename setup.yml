@@ -8,25 +8,20 @@
 # # Env
 #     - { name: local-bin, include: environments/local-bin.yml }
 #     - { name: peco-history, include: environments/peco-history.yml }
-#     - { name: homebrew, include: applications/homebrew.yml }
-
-# # IDE
-#    - { name: VisualStudio Code, include: applications/vscode.yml }
-#    - { name: Intelli-J Idea Ultimate, include: applications/intellij-idea.yml }
-#    - { name: Android Studio, include: applications/android-studio.yml }
-#    - { name: PyCharm Professional, include: applications/pycharm-professional.yml }
-#    - { name: WebStorm, include: applications/webstorm.yml }
+#     - { name: homebrew, include: environments/homebrew.yml }
 
 # # Develop environment
-#     - { name: AWS cli v2, include: applications/aws-cli-v2.yml }
-#     - { name: sdkman, include: applications/sdkman.yml }
-#     - { name: tig, include: applications/tig.yml }
-#     - { name: httpie, include: applications/httpie.yml }
-#     - { name: source-han-code-jp, include: applications/source-han-code-jp.yml }
-#     - { name: direnv, include: applications/direnv.yml }
-#     - { name: pyenv, include: applications/pyenv.yml }
-#     - { name: aws-vault, include: applications/aws-vault.yml }
-#     - { name: pyenv, include: applications/pyenv.yml }
+#     - { name: VisualStudio Code, include: developments/vscode.yml }
+#     - { name: Intelli-J Idea Ultimate, include: developments/intellij-idea.yml }
+#     - { name: Android Studio, include: developments/android-studio.yml }
+#     - { name: PyCharm Professional, include: developments/pycharm-professional.yml }
+#     - { name: WebStorm, include: developments/webstorm.yml }
+#     - { name: AWS cli v2, include: developments/aws-cli-v2.yml }
+#     - { name: sdkman, include: developments/sdkman.yml }
+#     - { name: source-han-code-jp, include: developments/source-han-code-jp.yml }
+#     - { name: direnv, include: developments/direnv.yml }
+#     - { name: pyenv, include: developments/pyenv.yml }
+#     - { name: aws-vault, include: developments/aws-vault.yml }
 
 # # Application
 #     - { name: htop, include: applications/htop.yml }
@@ -35,5 +30,7 @@
 # #    - { name: Dropbox, include: applications/dropbox.yml } # TODO: 難しいので後回し
 #     - { name: slack, include: applications/slack.yml }
 #     - { name: spotify, include: applications/spotify.yml }
+#     - { name: tig, include: applications/tig.yml }
+#     - { name: httpie, include: applications/httpie.yml }
 
 # Configuration
