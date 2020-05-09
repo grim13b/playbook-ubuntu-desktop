@@ -1,7 +1,5 @@
 ---
-- name: Slack (snap) - install
+- name: Slack (deb) - install
   become: yes
-  snap:
-    name: slack
-    classic: yes
-    state: present
+  apt:
+    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-4.4.2-amd64.deb
