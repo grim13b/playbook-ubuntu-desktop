@@ -1,0 +1,4 @@
+---
+- name: aws-vault (brew) - install
+  homebrew:
+    name: aws-vault
