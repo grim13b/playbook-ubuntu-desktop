@@ -1,5 +1,5 @@
 ---
 - name: httpie (apt) - install
   become: yes
-  snap:
+  apt:
     name: httpie
