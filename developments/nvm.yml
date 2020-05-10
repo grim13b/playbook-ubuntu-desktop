@@ -1,0 +1,22 @@
+---
+- name: nvm (git) - check if the nvm already exists
+  stat: 
+    path: ~/.nvm
+  register: localnvm
+
+- block:
+  - name: nvm (git) - clone
+    git: 
+      repo: https://github.com/nvm-sh/nvm.git
+      dest: ~/.nvm
+
+  - name: nvm (git) - setup
+    blockinfile:
+      path: ~/.bashrc
+      marker: "# {mark} ANSIBLE MANAGED BLOCK nvm"
+      block: |
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+  when: not localnvm.stat.exists
