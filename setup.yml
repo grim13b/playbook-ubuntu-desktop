@@ -23,6 +23,7 @@
 #     - { name: pyenv, include: developments/pyenv.yml }
 #     - { name: aws-vault, include: developments/aws-vault.yml }
 #     - { name: nvm, include: developments/nvm.yml }
+#     - { name: yarn, include: developments/yarn.yml }
 
 # # Application
 #     - { name: htop, include: applications/htop.yml }
