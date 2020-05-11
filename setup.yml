@@ -34,5 +34,6 @@
 #     - { name: spotify, include: applications/spotify.yml }
 #     - { name: tig, include: applications/tig.yml }
 #     - { name: httpie, include: applications/httpie.yml }
+#     - { name: BraveBrowser, include: applications/brave.yml }
 
 # Configuration

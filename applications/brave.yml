@@ -1,0 +1,16 @@
+---
+- name: BraveBrowser (apt) - add key 
+  become: yes
+  apt_key:
+    url: 'https://brave-browser-apt-release.s3.brave.com/brave-core.asc'
+    keyring: '/etc/apt/trusted.gpg.d/brave-browser-release.gpg'
+
+- name: BraveBrowser (apt) - add repo 
+  become: yes
+  apt_repository:
+    repo: 'deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main'
+
+- name: BraveBrowser (apt) - install
+  become: yes
+  apt:
+    name: brave-browser
