@@ -1,0 +1,23 @@
+---
+- name: Docker (apt) - add key 
+  become: yes
+  apt_key:
+    url: 'https://download.docker.com/linux/ubuntu/gpg'
+
+- name: Docker (apt) - Dstro Codename
+  command: lsb_release -cs
+  register: codename
+
+- name: Docker (apt) - add repo 
+  become: yes
+  apt_repository:
+    repo: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ codename.stdout }} stable'
+
+- name: Docker (apt) - install
+  become: yes
+  apt:
+    install_recommends: yes
+    name: 
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io

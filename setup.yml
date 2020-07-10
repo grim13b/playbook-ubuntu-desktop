@@ -24,6 +24,7 @@
 #     - { name: aws-vault, include: developments/aws-vault.yml }
 #     - { name: nvm, include: developments/nvm.yml }
 #     - { name: yarn, include: developments/yarn.yml }
+#    - { name: docker, include: developments/docker.yml }
 
 # # Application
 #     - { name: htop, include: applications/htop.yml }
