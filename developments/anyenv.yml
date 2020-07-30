@@ -1,0 +1,9 @@
+---
+- name: anyenv (brew) - install
+  homebrew:
+    name: anyenv
+
+- name: Aanyenv (brew) - add completion to .bashrc
+  lineinfile:
+    path: ~/.bashrc
+    line: eval "$(anyenv init -)"

@@ -20,11 +20,12 @@
 #     - { name: sdkman, include: developments/sdkman.yml }
 #     - { name: source-han-code-jp, include: developments/source-han-code-jp.yml }
 #     - { name: direnv, include: developments/direnv.yml }
-#     - { name: pyenv, include: developments/pyenv.yml }
+#  #   - { name: pyenv, include: developments/pyenv.yml } # deprecated ?
 #     - { name: aws-vault, include: developments/aws-vault.yml }
 #     - { name: nvm, include: developments/nvm.yml }
 #     - { name: yarn, include: developments/yarn.yml }
-#    - { name: docker, include: developments/docker.yml }
+#     - { name: docker, include: developments/docker.yml }
+#     - { name: anyenv, include: developments/anyenv.yml }
 
 # # Application
 #     - { name: htop, include: applications/htop.yml }
