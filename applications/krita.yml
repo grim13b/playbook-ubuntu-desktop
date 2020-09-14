@@ -1,0 +1,6 @@
+---
+- name: Krita(apt) - install
+  become: yes
+  apt:
+    name: krita
+    state: present

@@ -1,0 +1,6 @@
+---
+- name: Arduino IDE(snap) - install
+  become: yes
+  snap:
+    name: arduino
+    state: present

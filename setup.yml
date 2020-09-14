@@ -37,5 +37,6 @@
 #     - { name: tig, include: applications/tig.yml }
 #     - { name: httpie, include: applications/httpie.yml }
 #     - { name: BraveBrowser, include: applications/brave.yml }
+#     - { name: krita, include: applications/krita.yml }
 
 # Configuration
